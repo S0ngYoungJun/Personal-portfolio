@@ -1,7 +1,6 @@
 "use client"
 import { useEffect, useRef } from "react";
 
-
 export default function App() {
   const outerDivRef = useRef()
   useEffect(() => {
@@ -14,42 +13,26 @@ export default function App() {
       if (deltaY > 0) {
         // 스크롤 내릴 때
         if (scrollTop >= 0 && scrollTop < pageHeight) {
-          //현재 1페이지
-          console.log("현재 1페이지, down");
           outerDivRef.current.scrollTo({
             top: pageHeight + DIVIDER_HEIGHT,
             left: 0,
             behavior: "smooth",
           });
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          //현재 2페이지
-          console.log("현재 2페이지, down");
           outerDivRef.current.scrollTo({
             top: pageHeight * 2 + DIVIDER_HEIGHT * 2,
             left: 0,
             behavior: "smooth",
           });
-        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2){
-          // 현재 3페이지
-          console.log("현재 3페이지, down");
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3){
           outerDivRef.current.scrollTo({
-            top: pageHeight * 3 + DIVIDER_HEIGHT * 2,
+            top: pageHeight *3  + DIVIDER_HEIGHT * 2,
             left: 0,
             behavior: "smooth",
           });
-        }else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2){
-          // 현재 3페이지
-          console.log("현재 4페이지, down");
+        }else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4){
           outerDivRef.current.scrollTo({
-            top: pageHeight * 3+ DIVIDER_HEIGHT * 2,
-            left: 0,
-            behavior: "smooth",
-          });
-        }else {
-          // 현재 3페이지
-          console.log("현재 4페이지, down");
-          outerDivRef.current.scrollTo({
-            top: pageHeight * 4 + DIVIDER_HEIGHT * 3,
+            top: pageHeight *4 + DIVIDER_HEIGHT * 2,
             left: 0,
             behavior: "smooth",
           });
@@ -57,43 +40,27 @@ export default function App() {
         
       } else {
         // 스크롤 올릴 때
-        if (scrollTop >= 0 && scrollTop < pageHeight) {
-          //현재 1페이지
-          console.log("현재 1페이지, up");
-          outerDivRef.current.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          //현재 2페이지
-          console.log("현재 2페이지, up");
+        if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
           outerDivRef.current.scrollTo({
             top: 0,
             left: 0,
             behavior: "smooth",
           });
         } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
-          // 현재 3페이지
-          console.log("현재 3페이지, up");
-          outerDivRef.current.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-        }else if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
-          // 현재 3페이지
-          console.log("현재 4페이지, up");
-          outerDivRef.current.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-          });
-        }else {
-          // 현재 3페이지
-          console.log("현재 5페이지, up");
           outerDivRef.current.scrollTo({
             top: pageHeight + DIVIDER_HEIGHT,
+            left: 0,
+            behavior: "smooth",
+          });
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 2 + DIVIDER_HEIGHT * 2,
+            left: 0,
+            behavior: "smooth",
+          });
+        }else if (scrollTop >= pageHeight && scrollTop < pageHeight * 5) {   
+          outerDivRef.current.scrollTo({
+            top: pageHeight * 3 + DIVIDER_HEIGHT * 2,
             left: 0,
             behavior: "smooth",
           });
@@ -101,7 +68,6 @@ export default function App() {
       }
 };
     
-
 
     const outerDivRefCurrent = outerDivRef.current;
 
@@ -120,9 +86,7 @@ export default function App() {
       <div className="divider"></div>
       <div className="inner bg-blue">나의소개 </div>
       <div className="divider"></div>
-      <div className="inner bg-pink">내가 배운것들?
-
-      </div>
+      <div className="inner bg-pink">내가 배운것들?</div>
       <div className="divider"></div>
       <div className="inner bg-gray">여기에 내 작업물</div>
       <div className="divider"></div>
